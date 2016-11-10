@@ -14,6 +14,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'capybara'
 end
 
 group :development do
@@ -22,7 +23,6 @@ group :development do
 end
 
 group :test do
-  gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'shoulda-matchers'
