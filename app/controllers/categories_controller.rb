@@ -1,12 +1,8 @@
 class CategoriesController < ApplicationController
 
   def index
-    @categories = Category.all
+    @categories = Category.order("LOWER(name)")
   end
-
-  # def new
-  #   @category = Category.new
-  # end
 
   def create
     category = Category.create(category_params)
