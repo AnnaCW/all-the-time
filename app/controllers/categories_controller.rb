@@ -4,9 +4,9 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
-  def new
-    @category = Category.new
-  end
+  # def new
+  #   @category = Category.new
+  # end
 
   def create
     category = Category.create(category_params)
@@ -16,7 +16,6 @@ class CategoriesController < ApplicationController
         flash[:notice] = category.full_messages.join(", ")
       end
       redirect_to categories_path
-
   end
 
   private
