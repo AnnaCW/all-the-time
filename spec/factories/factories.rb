@@ -9,6 +9,6 @@ FactoryGirl.define do
   end
 
   sequence :name do |n|
-    name"#{n}"
+    "name#{n}"
   end
 end
