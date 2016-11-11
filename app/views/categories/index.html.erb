@@ -1,0 +1,14 @@
+<h2>Categories</h2>
+
+<% @categories.each do |category| %>
+<ul>
+  <li> <%= category.name %></li>
+  <% end %>
+</ul>
+
+<%= form_for(:category, url: categories_path, method: "post") do |f| %>
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name %>
+
+  <%= f.submit "Create" %>
+<% end %>
