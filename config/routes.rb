@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index, :create]
   resources :entries, only: [:new, :create]
+  resources :reports, only: [:index]
 end
