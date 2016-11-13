@@ -19,5 +19,7 @@ feature "User manages entries" do
 
     click_on "Create"
 
+    expect(page).to have_content("Entry Saved")
+    expect(current_path).to eq(root_path)
   end
 end
