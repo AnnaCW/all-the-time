@@ -4,6 +4,7 @@ feature "User manages categories" do
 
   scenario "creates a category" do
     user = create(:user)
+    sign_in(user)
 
     visit categories_path
 
@@ -14,6 +15,9 @@ feature "User manages categories" do
   end
 
   scenario "lists categories in alphabetical order" do
+    user = create(:user)
+    sign_in(user)
+
     create(:category, name: "A")
     create(:category, name: "C")
     create(:category, name: "b")

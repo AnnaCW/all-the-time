@@ -22,4 +22,16 @@ feature "User manages entries" do
     expect(page).to have_content("Entry Saved")
     expect(current_path).to eq(root_path)
   end
+
+  scenario "not logged in user cannot add entry" do
+    user = create(:user)
+
+    visit root_path
+
+    expect(page).to_not have_content("Add Entry")
+
+    visit new_entry_path
+
+    expect(page).to have_content("You need to sign in or sign up before continuing")
+  end
 end
