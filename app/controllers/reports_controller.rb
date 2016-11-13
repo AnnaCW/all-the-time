@@ -1,7 +1,8 @@
 class ReportsController < ApplicationController
 
   def index
-   @dailies = Entry.where(date: report_params[:date])
+   end_date = report_params[:date]
+   @presenter = ReportsPresenter.new(end_date)
   end
 
 private

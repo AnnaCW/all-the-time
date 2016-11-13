@@ -1,6 +1,8 @@
 <h1>Reports</h1>
 
 <div class="daily-report">
+  <h2>Daily Report</h2>
+
   <table class= 'table'>
     <thead>
       <tr>
@@ -11,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @dailies.each do |entry| %>
+      <% @presenter.entries_day.each do |entry| %>
         <tr>
           <td><%= entry.date %></td>
           <td><%= entry.description %></td>
@@ -20,7 +22,11 @@
         </tr>
       <% end %>
     </tbody>
-
   </table>
+
+  <h3>Daily Breakdown</h3>
+
+    <h5>
+    </h5>
 
 </div>
