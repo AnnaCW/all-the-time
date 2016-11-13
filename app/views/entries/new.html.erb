@@ -1,0 +1,17 @@
+<%= form_for(:entry, url: entries_path, method: "post") do |f| %>
+
+  <%= f.label :value, "Time (minutes)"%>
+  <%= f.text_field :value %>
+
+  <%= f.label :date, "Date" %>
+  <%= date_field(:entry, :date, value: Time.now.try(:strftime, '%Y-%m-%d')) %>
+
+  <%= f.label :category, "Category" %>
+  <%= f.collection_select(:category_id, @categories, :id, :name ) %>
+
+  <%= f.label :description, "Description" %>
+  <%= f.text_field :description %>
+
+  <%= f.submit "Create" %>
+
+<% end %>
