@@ -12,6 +12,6 @@ feature "User manages entries" do
 
     expect(current_path).to eq(new_entry_path)
 
-    fill_in "Hours", with: "3"
+    fill_in "Time (minutes)", with: "65"
   end
 end
