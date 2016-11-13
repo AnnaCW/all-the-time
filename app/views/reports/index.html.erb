@@ -1,0 +1,26 @@
+<h1>Reports</h1>
+
+<div class="daily-report">
+  <table class= 'table'>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Time (minutes)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @dailies.each do |entry| %>
+        <tr>
+          <td><%= entry.date %></td>
+          <td><%= entry.description %></td>
+          <td><%= Category.find(entry.category_id).name %></td>
+          <td><%= entry.value %></td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+
+</div>

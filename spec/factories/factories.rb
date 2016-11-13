@@ -20,7 +20,7 @@ FactoryGirl.define do
     user
     category
     value 30
-    date "2016-11-12"
+    date Date.today
     description
   end
 end
