@@ -4,6 +4,16 @@ FactoryGirl.define do
     password "password1"
   end
 
+  factory :organization do
+    name "org"
+  end
+
+  factory :admin, class: User do
+    email "admin@gmail.com"
+    password "adminpwd"
+    org_admin true
+  end
+
   factory :category do
     name
   end

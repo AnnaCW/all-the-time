@@ -17,3 +17,7 @@
 </div>
 
 <% end %>
+
+<% if current_user.org_admin? %>
+  <%= link_to "Organization Reports", organization_path(current_user.organization_id), class:"btn btn-primary" %>
+<% end  %>
