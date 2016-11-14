@@ -14,12 +14,12 @@
     </thead>
     <tbody>
       <% @users_with_entries.each do |user| %>
-        <tr>
-          <td><%= user.email %></td>
-            <% user.categories_times_day(@end_date).each do |key, value| %>
-              <td><%= Category.find(key).name %></td>
-              <td><%= value %></td>
-            <% end %>
+          <% user.categories_times_day(@end_date).each do |key, value| %>
+          <tr>
+            <td><%= user.email %></td>
+            <td><%= Category.find(key).name %></td>
+            <td><%= value %></td>
+          <% end %>
 
         </tr>
       <% end %>
