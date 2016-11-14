@@ -1,11 +1,12 @@
 class ReportsPresenter
 
-  def initialize(date)
+  def initialize(date, user)
     @date = date
+    @user = user
   end
 
   def entries_day
-    Entry.where(date: date)
+    Entry.where(user: user, date: date)
   end
 
   def total_time_day
@@ -21,6 +22,10 @@ class ReportsPresenter
 
   def date
     @date
+  end
+
+  def user
+    @user
   end
 
 end
