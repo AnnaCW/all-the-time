@@ -5,9 +5,16 @@ feature "Organization admin views organization info" do
     org = create(:organization)
     admin = create(:admin, organization_id: org.id)
 
-    org_users = 3.times do |n|
-      create(:user, email: "user#{n}@org.org", organization_id: org.id)
-    end
+    user_1 = create(:user, email: "user1@org.org", organization_id: org.id)
+    user_2 = create(:user, email: "user2@org.org", organization_id: org.id)
+
+    cat1 = create(:category, name: "Rails")
+    cat2 = create(:category, name: "Java")
+
+    create(:entry, user: user_1, category: cat1, value: 30)
+    create(:entry, user: user_2, category: cat2, value: 30)
+    create(:entry, user: user_2, category: cat2, value: 60)
+
 
     other_users = 2.times do |n|
       create(:user, email: "user#{n}@other.com")
@@ -37,5 +44,7 @@ feature "Organization admin views organization info" do
 
     expect(page).to have_content("@org.org")
     expect(page).to_not have_content("@other.com")
+save_and_open_page
+    expect(page).to have_content("Java 90")
   end
 end

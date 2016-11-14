@@ -8,10 +8,8 @@ Rails.application.routes.draw do
 
   resources :organizations do
     resources :users, only: [:index]
-    # resources :reports, only: [:index]
-    
+
     get '/reports', to: 'organizations/reports#index'
-    # , :on => :collection
   end
 
 end
