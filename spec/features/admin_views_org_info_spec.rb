@@ -33,7 +33,9 @@ feature "Organization admin views organization info" do
     click_on "Organization Reports"
     click_on "Get Time Reports"
 
-save_and_open_page
     expect(current_path).to eq(organization_reports_path(org.id))
+
+    expect(page).to have_content("@org.org")
+    expect(page).to_not have_content("@other.com")
   end
 end
