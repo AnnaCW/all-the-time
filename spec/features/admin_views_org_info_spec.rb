@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature "Organization admin views organization info" do
-  scenario "admin views organization's users" do
+  scenario "admin views organization's users and reports" do
     org = create(:organization)
     admin = create(:admin, organization_id: org.id)
 
@@ -29,5 +29,11 @@ feature "Organization admin views organization info" do
       expect(page).to have_content("@org.org")
       expect(page).to_not have_content("@other.com")
     end
+
+    click_on "Organization Reports"
+    click_on "Get Time Reports"
+
+save_and_open_page
+    expect(current_path).to eq(organization_reports_path(org.id))
   end
 end
