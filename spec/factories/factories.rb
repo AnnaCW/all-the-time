@@ -9,7 +9,7 @@ FactoryGirl.define do
   end
 
   factory :admin, class: User do
-    email "admin@gmail.com"
+    email "admin@org.org"
     password "adminpwd"
     org_admin true
   end
