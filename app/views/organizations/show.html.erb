@@ -1,0 +1,11 @@
+<%= link_to "Users", organization_users_path(@org) %>
+
+<div class="row">
+  <h3>View Time Reports</h3>
+    <h5>Select An End Date for Your Reports</h5>
+      <%= form_tag(organization_reports_path(@org), method: "get") do %>
+        <%= label_tag(:q, "End Date") %>
+        <%= date_field(:q, :date, value: Date.today.try(:strftime, '%Y-%m-%d')) %>
+        <%= submit_tag("Get Time Reports")%>
+      <% end %>
+</div>

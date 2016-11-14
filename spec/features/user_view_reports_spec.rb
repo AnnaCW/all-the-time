@@ -20,8 +20,8 @@ feature "User views reports" do
     expect(current_path).to eq(reports_path)
 
     within(".daily-report") do
-      expect(page).to have_content("task1")
-      expect(page).to have_content("task5")
+      expect(page).to have_content("Rails")
+      expect(page).to have_content("Java")
     end
 
     within(".daily-totals") do

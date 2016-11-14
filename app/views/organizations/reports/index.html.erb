@@ -1,0 +1,30 @@
+<h1>Organization Time Reports</h1>
+
+<div class="user-activity-daily">
+
+  <h2>Daily User Activity</h2>
+
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Category</th>
+        <th>Time (minutes)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users_with_entries.each do |user| %>
+          <% user.categories_times_day(@end_date).each do |key, value| %>
+          <tr>
+            <td><%= user.email %></td>
+            <td><%= Category.find(key).name %></td>
+            <td><%= value %></td>
+          <% end %>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+</div>
