@@ -21,6 +21,9 @@
           <td>
             <%= link_to "Edit", edit_entry_path(entry), class: "btn btn-warning" %>
           </td>
+          <td>
+            <%= link_to "Delete", entry_path(entry), method: "delete", class: "btn btn-danager" %>
+          </td>
         </tr>
       <% end %>
     </tbody>

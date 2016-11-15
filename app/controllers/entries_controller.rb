@@ -37,6 +37,12 @@ class EntriesController < ApplicationController
       redirect_to entries_path
   end
 
+  def destroy
+    (Entry.find(params[:id])).delete
+    flash[:notice] = "Entry Deleted!"
+    redirect_to entries_path
+  end
+
   private
 
   def entry_params
