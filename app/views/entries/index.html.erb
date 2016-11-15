@@ -7,6 +7,8 @@
         <th>Description</th>
         <th>Category</th>
         <th>Time (minutes)</th>
+        <th>Edit</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody class="entries">
@@ -16,6 +18,9 @@
           <td><%= entry.description %></td>
           <td><%= entry.category_name %></td>
           <td><%= entry.value %></td>
+          <td>
+            <%= link_to "Edit", edit_entry_path(entry), class: "btn btn-warning" %>
+          </td>
         </tr>
       <% end %>
     </tbody>

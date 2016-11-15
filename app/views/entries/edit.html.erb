@@ -1,0 +1,18 @@
+<h1>Edit Entry</h1>
+
+<%= form_for(:entry, url: entry_path(@entry), method: "patch") do |f| %>
+
+  <%= f.label :value, "Time (minutes)"%>
+  <%= f.text_field :value, value: @entry.value %>
+
+  <%= f.label :date, "Date" %>
+  <%= date_field(:entry, :date, value: @entry.date) %>
+
+  <%= f.label :category, "Category" %>
+  <%= f.collection_select(:category_id, @categories, :id, :name, value: @entry.category_name ) %>
+
+  <%= f.label :description, "Description" %>
+  <%= f.text_field :description, value: @entry.description %>
+
+  <%= f.submit "Update" %>
+<% end %>
