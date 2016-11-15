@@ -4,4 +4,9 @@ class Entry < ApplicationRecord
 
   validates_presence_of :value
   validates_numericality_of :value
+
+  def category_name
+    Category.find(category_id).name
+  end
+
 end

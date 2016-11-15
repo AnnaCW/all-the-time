@@ -17,7 +17,7 @@
         <tr>
           <td><%= entry.date %></td>
           <td><%= entry.description %></td>
-          <td><%= Category.find(entry.category_id).name %></td>
+          <td><%= entry.category_name %></td>
           <td><%= entry.value %></td>
         </tr>
       <% end %>
