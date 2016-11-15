@@ -1,5 +1,9 @@
 class EntriesController < ApplicationController
 
+  def index
+    @entries = Entry.where(user: current_user).order(:date).reverse
+  end
+
   def new
     @categories = Category.order("LOWER(name)")
   end
