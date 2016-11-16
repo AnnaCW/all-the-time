@@ -1,17 +1,46 @@
-<%= form_for(:entry, url: entries_path, method: "post") do |f| %>
+<div class= "form-inline">
 
-  <%= f.label :value, "Time (minutes)"%>
-  <%= f.text_field :value %>
+  <h3 class="bold-header">New Entry</h3>
 
-  <%= f.label :date, "Date" %>
-  <%= date_field(:entry, :date, value: Time.now.try(:strftime, '%Y-%m-%d')) %>
+  <%= form_for(:entry, url: entries_path, method: "post") do |f| %>
 
-  <%= f.label :category, "Category" %>
-  <%= f.collection_select(:category_id, @categories, :id, :name ) %>
+    <div class="form-group">
+      <%= f.label :value, "Time (minutes)"%>
+      <%= f.text_field :value %>
+    </div>
 
+    <div class="form-group">
+      <%= f.label :date, "Date" %>
+      <%= date_field(:entry, :date, value: Time.now.try(:strftime, '%Y-%m-%d')) %>
+    </div>
+
+  <div class="form-group">
+    <%= f.label :category, "Category" %>
+    <%= f.collection_select(:category_id, @categories, :id, :name ) %>
+  </div>
+
+<div class="form-group">
   <%= f.label :description, "Description" %>
   <%= f.text_field :description %>
+</div>
 
-  <%= f.submit "Create" %>
+  <%= f.submit "Create Entry", class: "btn btn-custom btn-sm" %>
+  <% end %>
 
-<% end %>
+</div>
+
+
+<div class= "form-inline add-category">
+   <div class="form-group">
+    <h4 class='bold-header'>Add New Category</h4>
+
+    <%= form_for(:category, url: categories_path, method: "post") do |f| %>
+    <div class="form-group">
+      <%= f.label :name, "Name" %>
+      <%= f.text_field :name, class: "input-group" %>
+    </div>
+
+      <%= f.submit "Create Category", class: "btn btn-custom btn-xs" %>
+    <% end %>
+  </div>
+</div>

@@ -8,7 +8,7 @@
       <%= form_tag("/reports", method: "get") do %>
         <%= label_tag(:q, "End Date") %>
         <%= date_field(:q, :date, value: Date.today.try(:strftime, '%Y-%m-%d')) %>
-        <%= submit_tag("Get Reports")%>
+        <%= submit_tag("Get Reports", class: "btn btn-success")%>
       <% end %>
 </div>
 

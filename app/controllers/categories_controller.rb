@@ -11,7 +11,8 @@ class CategoriesController < ApplicationController
       else
         flash[:notice] = category.full_messages.join(", ")
       end
-      redirect_to categories_path
+      redirect_back(fallback_location: categories_path)
+      # redirect_to categories_path
   end
 
   private

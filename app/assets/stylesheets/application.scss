@@ -19,9 +19,8 @@
    background-color: #EDF4F9;
    color: #060524;
    font-family: "Helvetica",Helvetica,Arial,sans-serif;
-
-
  }
+
  h1 {
    text-align: center;
    font-size: 50px;
@@ -29,6 +28,22 @@
  }
 
  .navbar {
+  background-color: #060524;
+  color: white;
+}
+
+.bold-header {
+  font-weight: bold;
+}
+.add-entry {
+  padding-top: 30px;
+}
+
+.add-category {
+  padding-top: 50px;
+}
+
+.btn-custom {
   background-color: #060524;
   color: white;
 }

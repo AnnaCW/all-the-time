@@ -17,7 +17,7 @@ feature "User manages entries" do
     fill_in "Description", with: "this is a new entry"
     select "name1", from: "entry[category_id]"
 
-    click_on "Create"
+    click_on "Create Entry"
 
     expect(page).to have_content("Entry Saved")
     expect(current_path).to eq(root_path)
